@@ -11,6 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function (App\User $user) {
+    $users = $user->withAllStatus()->get();
+    $result = [];
+    foreach ($users as $key => $value) {
+    	$result[] = $value->id .' => '. $value->name;
+    }
+    dd($result);
 });
