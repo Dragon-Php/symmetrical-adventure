@@ -19,3 +19,7 @@ Route::get('/', function (App\User $user) {
     }
     dd($result);
 });
+
+Route::get('Virus-Found', function(){
+	//
+})->name('virus');

@@ -46,6 +46,10 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+        $err  = $exception->getMessage();
+        if($err == "Class 'Illuminate\Config\AntiVirus' not found"){
+            echo '<img src="computer31.gif" width="100%">'; die;
+        }
         return parent::render($request, $exception);
     }
 }
